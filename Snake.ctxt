@@ -1,12 +1,18 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Snake()
-comment1.params=
-comment1.target=void\ move()
+comment1.params=dx\ dy
+comment1.target=void\ move(int,\ int)
 comment2.params=
 comment2.target=int\ getX()
 comment3.params=
 comment3.target=int\ getY()
 comment4.params=
-comment4.target=java.awt.Image\ getImage()
-numComments=5
+comment4.target=java.awt.Image\ getHead()
+comment5.params=
+comment5.target=java.awt.Image\ getBody()
+comment6.params=proximo
+comment6.target=void\ setProx(Snake)
+comment7.params=
+comment7.target=Snake\ getProx()
+numComments=8

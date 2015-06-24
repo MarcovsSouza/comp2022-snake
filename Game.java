@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
+
 import javax.swing.*;
 
 public class Game extends JFrame
@@ -27,7 +28,7 @@ public class Game extends JFrame
         setResizable(false);
         // Mostra a janela
         setVisible(true);
-        
+               
     }
     public static void main (String args[]){
         new Game();

@@ -43,7 +43,17 @@ public class Score extends JPanel
     * @return     void
     */
     public void subScore(int points){
-        this.score = this.score + points;
+        this.score = this.score - points;
+    }
+
+    /**
+    * Este método retorna o score.
+    * 
+    * @param  null 
+    * @return     score
+    */
+    public int getScore() {
+        return score;
     }
     
     /**
