@@ -14,25 +14,32 @@ public class Snake extends JPanel {
     private final String snakeHead = "images/head.png";
     private final String snakeBody = "images/body.png";
 
-    private int x;
-    private int y;
-    private Image head;
-    private Image body;
-    private Snake proximo;
+    private int x, y;
+    private Image head, body;
+    private Snake next;
     
     public Snake() {
         ImageIcon i = new ImageIcon(snakeHead);
-        ImageIcon ii = new ImageIcon(snakeBody);
         head = i.getImage();
-        body = ii.getImage();
         x = 400;
         y = 300;
     }
     
+    public Snake(int x, int y) {
+    	ImageIcon ii = new ImageIcon(snakeBody);
+    	body = ii.getImage();
+    	this.x = x;
+    	this.y = y;
+    }
     
     public void move(int dx, int dy) {
-        x += dx;
-        y += dy;
+        this.x += dx;
+        this.y += dy;
+    }
+    
+    public void moveBody(int x, int y) {
+    		this.x = x;
+    		this.y = y;
     }
 
     public int getX() {
@@ -42,7 +49,6 @@ public class Snake extends JPanel {
     public int getY() {
         return y;
     }
-
     public Image getHead() {
         return head;
     }
@@ -51,12 +57,12 @@ public class Snake extends JPanel {
         return body;
     }
 
-    public void setProx(Snake proximo) {
-        this.proximo = proximo;
+    public void setNext(Snake next) {
+        this.next = next;
     }
 
-    public Snake getProx() {
-        return this.proximo;
+    public Snake getNext() {
+        return this.next;
     }
 
 }
