@@ -2,6 +2,7 @@ public class Lista {
 
 	public Snake cobra;
 	public static int size;
+	public Snake inicio;
 
 	public Lista () {
 		this.cobra = null;

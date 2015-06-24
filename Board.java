@@ -66,8 +66,7 @@ public class Board extends JPanel implements ActionListener {
                         
             if (lista.getSize() > length) lista.remover();
             
-            
-            collision(cobra);
+            collision();
             
             if((cobra.getX() < LIM_E | cobra.getY() < LIM_C | cobra.getX() > LIM_D | cobra.getY() > LIM_B)){
                 gameOver = true;
@@ -75,9 +74,7 @@ public class Board extends JPanel implements ActionListener {
                 intro = false;
             }
             
-            
             move();
-            
             
             // Validando mesmo lugar SNAKE X FRIES
             if(((cobra.getX() <= RX+20) && (cobra.getX() >= RX-20)) &&
@@ -277,7 +274,26 @@ public class Board extends JPanel implements ActionListener {
         }
     }
     
-    public void collision(Snake head){
+    public void collision(){
+    	Rectangle cabeca = lista.getSnake().getBounds();
+    	Snake corpo = cobra;
+        if(corpo.getNext() != null){
+            corpo = corpo.getNext();
+            while(corpo.getNext() != null){
+                /*if(cobra.getX() == corpo.getX() && cobra.getY() == corpo.getY()){*/
+                  
+                 
+                if(((cobra.getX() <= corpo.getX()+20) && (cobra.getX() >= corpo.getX()-20)) &&
+                ((cobra.getY() <= corpo.getY()+20) && (cobra.getY() >= corpo.getY()-20))){
+                    isPlaying = false;
+                    gameOver = true;
+                    intro = false;
+                    break;
+                }
+                corpo = corpo.getNext();   
+            } 
+        }
+    
     }
         
     public void drawBatata(Graphics g2d) {
